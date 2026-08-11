@@ -1,0 +1,10 @@
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'GreatVibes';
+    src: url(../Fuentes/GreatVibes-Regular.ttf)format(TrueType);
+    font-weight: 400;
+}
