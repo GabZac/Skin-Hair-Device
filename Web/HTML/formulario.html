@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../CSS/formulario.css">
+    <link rel="stylesheet" href="../CSS/fonts.css">
+    <link rel="icon" type="image/png" href="../IMG/favicon.png">
+    <title>Cuestionario</title>
+</head>
+<body>
+    <header>
+        <h1>Skin-Hair Device</h1>
+    </header>
+    <main>
+        <div class="cajaPrincipal">
+            <div>
+                <h2>Cuestionario</h2>
+                <br>
+                <h3>¿Para qué sirve?</h3>
+                <p>Gracias a este cuestionario podremos cargar sus respuestas en nuestra base de datos y analizar sus características para poder recomendar de manera personalidad para el usuario, productos ya sea de belleza como tambien de salud de la piel, del pelo, de determinadas secciones de la cara, con el fin de ayudar e informar al usuario.</p>
+                <br>
+                <p class="aviso"><span>Nota importante:</span> Recuerda que cada piel es única. Las recomendaciones que comparto aquí tienen una finalidad puramente informativa. Antes de incorporar cualquier producto a tu rutina, consulta siempre con tu dermatólogo de confianza.</p>
+            </div>
+            <br>
+            <br>
+
+
+            <div class="quiz-container">
+                <h2>Cuestionario de Diagnóstico</h2>
+                <br>
+                
+                <form id="quizForm" method="POST">
+                    
+
+                    <div class="question-block">
+                        <p class="question-text">1. ¿Cómo sentís la piel de tu rostro la mayor parte del día?</p>
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label><input type="radio" name="facial_tipo_piel" value="facial_grasa" required> Con brillo aceitoso en todo el rostro y poros abiertos.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="facial_tipo_piel" value="facial_seca"> Tirante, opaca y con descamación.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="facial_tipo_piel" value="facial_mixta"> Con brillo en la zona T (frente/nariz) pero seca en mejillas.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="facial_tipo_piel" value="facial_normal"> Normal y equilibrada.</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="question-block">
+                        <p class="question-text">2. ¿Cuál de estas afecciones específicas presenta tu rostro actualmente?</p>
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label><input type="radio" name="facial_afeccion" value="facial_acne" required> Granitos activos, puntos negros o acné.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="facial_afeccion" value="facial_manchas"> Manchas oscuras o tono desparejo.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="facial_afeccion" value="facial_envejecimiento"> Arrugas, líneas de expresión o flacidez.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="facial_afeccion" value="facial_sensible"> Rojez, ardor o sensibilidad extrema.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="facial_afeccion" value="facial_basico"> Ninguna, busco cuidado básico.</label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="question-block">
+                        <p class="question-text">3. ¿En qué zonas del cuerpo solés tener resequedad extrema o grietas? (Selección múltiple)</p>
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label><input type="checkbox" name="corporal_resequedad[]" value="corporal_pies"> En los pies o talones.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="checkbox" name="corporal_resequedad[]" value="corporal_manos"> En las manos.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="checkbox" name="corporal_resequedad[]" value="corporal_piernas_brazos"> En las piernas o brazos.</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="question-block">
+                        <p class="question-text">4. ¿Presentás granitos, vellos encarnados o textura rugosa en alguna de estas áreas?</p>
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label><input type="radio" name="corporal_textura" value="corporal_pecho_abdomen" required> En el pecho o abdomen.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="corporal_textura" value="corporal_brazos_piernas"> En los brazos o piernas.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="corporal_textura" value="corporal_sin_textura"> No tengo este problema.</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="question-block">
+                        <p class="question-text">5. Para tu zona íntima, ¿presentás alguna necesidad particular actual?</p>
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label><input type="radio" name="corporal_intimo" value="corporal_intimo_sensible" required> Sensibilidad, sequedad o propensión a irritaciones.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="corporal_intimo" value="corporal_intimo_normal"> Solo busco un jabón de cuidado diario equilibrado.</label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="question-block">
+                        <p class="question-text">6. ¿Cuál es la condición principal de tu cuero cabelludo?</p>
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_cuero" value="cabello_cc_graso" required> Muy graso, se ensucia el mismo día del lavado.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_cuero" value="cabello_cc_seco"> Seco, me pica y a veces se descama.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_cuero" value="cabello_cc_caspa"> Con caspa visible.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_cuero" value="cabello_cc_normal"> Normal o equilibrado.</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="question-block">
+                        <p class="question-text">7. Si mirás y tocás el largo y las puntas de tu pelo, ¿cómo lo describirías?</p>
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_estado" value="cabello_necesita_hidratacion" required> Está opaco y sin movimiento (Falta hidratación).</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_estado" value="cabello_necesita_nutricion"> Está duro, áspero y con frizz (Falta nutrición).</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_estado" value="cabello_necesita_reparacion"> Está quebradizo o dañado por químicos (Necesita reparación).</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_estado" value="cabello_sano"> Está sano y con brillo.</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="question-block">
+                        <p class="question-text">8. ¿Notás debilidad en el agarre de tu pelo o que perdió volumen?</p>
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_fuerza" value="cabello_anticaida" required> Sí, se cae mucho desde la raíz o está muy finito.</label>
+                            </li>
+                            <li class="option-item">
+                                <label><input type="radio" name="cabello_fuerza" value="cabello_fuerte"> No, tiene fuerza y cantidad normal.</label>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <button type="submit" class="btn-submit">Enviar Diagnóstico</button>
+                </form>
+
+
+                <div id="result"></div>
+            </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

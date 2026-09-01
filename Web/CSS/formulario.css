@@ -1,0 +1,133 @@
+body {
+    background-color: #b7cd7f;
+}
+
+h1 {
+    font-family: Fleur;
+    font-size: 80px;
+    background-color: #586e26;
+    color: whitesmoke;
+    margin: 0%;
+    text-align: center;
+    padding: 10px;
+    font-weight: 100;
+} 
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+* {
+    margin: 0;
+    font-family: 'Sand';
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 140px;
+    margin-bottom: 40px;
+}
+
+.cajaPrincipal {
+    background-color: #d9ef9f;
+    max-width: 500px;
+    width: 85%;
+    padding: 30px;
+    border-radius: 40px;
+    margin-top: 40px;
+}
+
+.aviso{
+    color: rgb(177, 0, 0);
+}
+
+span{
+    font-weight: bold;
+}
+
+#quizForm {
+    margin-top: 30px;
+}
+
+.question-block {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #586e26; /* Línea divisoria usando tu verde oscuro */
+}
+
+.question-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.options-list {
+    list-style: none;
+    padding: 0;
+}
+
+.option-item {
+    margin-bottom: 10px;
+}
+
+.option-item label {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semitransparente sobre tu caja verde */
+    border: 1px solid #586e26;
+    border-radius: 20px; /* Bordes redondeados para combinar con tu cajaPrincipal */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.option-item label:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.option-item input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+    accent-color: #586e26; /* El círculo seleccionado se pinta de tu verde oscuro */
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #586e26; /* Mismo color que tu header */
+    color: whitesmoke;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #586e26;
+    color: whitesmoke;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+.option-item input[type="checkbox"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+    accent-color: #586e26;
+}
