@@ -97,7 +97,7 @@ section {
     margin: 25px 0;         
 }
 
-.btn-cuestionario {
+.btn {
     display: inline-block;
     text-decoration: none;
     background-color: #557a46;
@@ -114,13 +114,13 @@ section {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-cuestionario:hover {
+.btn:hover {
     background-color: #436137;
     color: #ffffff;
     transform: translateY(-2px);
 }
 
-.btn-cuestionario:active {
+.btn:active {
     transform: translateY(0);
 }
 
