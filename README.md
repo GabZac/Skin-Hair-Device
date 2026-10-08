@@ -1,84 +1,121 @@
 # Skin-Hair-Device
-Pagina web que recomienda de manera personalizada productos de cosmetologia para el usuario en base a sus caracteristicas.
+
+Página web que recomienda productos de cosmética y cuidado personal según las características y necesidades del usuario.
 
 ## Descripción
 
-Este proyecto fue desarrollado con el objetivo de brindar al usuario productos recomendados para su tipo de rostro y/o cabello mediante a un formulario.
-Este formulario permite saber las caracteristicas del usuario y en base a esas respuestas se mostraran productos recomendados por su tipo de piel o de cabello y está pensado para una persona que quiera empezar a cuidar su salud e imagen facial y capilar.
+Este proyecto fue desarrollado para facilitar el cuidado del rostro, el cuerpo y el cabello.
+
+Mediante un cuestionario, el usuario puede indicar sus características y obtener recomendaciones personalizadas. Los productos se cargan automáticamente desde una base de datos y cuentan con enlaces para consultar información oficial y buscar dónde conseguirlos.
+
+El sitio no vende productos. Las recomendaciones tienen una finalidad informativa y no reemplazan una consulta profesional.
 
 ## Características
 
-* Ofrecemos al usuario mayor facilidad para poder cuidarse diaramente con los productos recomendados
-* Mayor facilidad para poder conseguir productos en base sus caracteristicas
-* Un entorno para el usuario sencillo de usar y visualmente estetico
-* Mediante a un cuestionario podemos tener la informacion necesesaria del usuario para recomendar productos 
+* Registro de usuarios e inicio de sesión.
+* Catálogo de 206 productos cargados desde la base de datos.
+* Visualización del catálogo completo sin necesidad de iniciar sesión.
+* Cuestionario y filtro de recomendaciones para usuarios con sesión iniciada.
+* Productos organizados por zonas del rostro, cuerpo y tratamientos capilares.
+* Enlaces a fichas oficiales y búsquedas en Mercado Libre.
+* Avisos emergentes con 42 consejos de cuidado personal, cada 10 minutos mientras se navega.
+* Opción para cerrar o pausar los consejos.
+* Menú lateral desplegable.
+* Diseño con una paleta de colores y tipografías propias.
 
 ## Tecnologías utilizadas
 
 * HTML
 * CSS
 * JavaScript
-* PHP [Base de datos]
+* PHP
+* MySQL / MariaDB
+* PDO para la conexión con la base de datos
+* XAMPP como entorno de desarrollo local
+* phpMyAdmin para administrar la base de datos
 
-##  Estructura del proyecto
+## Estructura del proyecto
+
+La carpeta principal de la aplicación contiene:
 
 ```text
-Skin-Hair-Device/
-│
-├── Web/
-│   │
-│   ├── CSS/
-│   │   ├── cuestionario.css
-│   │   ├── fonts.css
-│   │   └── style.css
-│   │
-│   ├── FONT/
-│   │   ├── FleurDeLeah-Regular.ttf
-│   │   ├── GreatVibes-Regular.ttf
-│   │   ├── PlayfairDisplay-Italic-VariableFont_wght.ttf
-│   │   ├── PlayfairDisplay-VariableFont_wght.ttf
-│   │   └── Quicksand-VariableFont_wght.ttf
-│   │
-│   ├── HTML/
-│   │   ├── index.html
-│   │   └── cuestionario.html
-│   │
-│   └── IMG/
-│       └── favicon.png
-│
-└── README.md
+Web/
+├── BD/
+│   └── base_completa.sql
+├── CSS/
+├── FONT/
+├── HTML/
+│   ├── cabello/
+│   ├── cuerpo/
+│   ├── rostro/
+│   ├── cuenta.php
+│   ├── formulario.html
+│   ├── formulario.php
+│   ├── inicio.php
+│   └── salir.php
+├── IMG/
+├── JS/
+│   ├── menu.js
+│   ├── script.js
+│   └── tips.js
+├── PHP/
+│   ├── bootstrap.php
+│   ├── catalogo.php
+│   ├── tarjeta.php
+│   └── zonas.php
+├── .htaccess
+├── index.html
+└── LEEME.md
 ```
 
+## Instalación local
 
+1. Instalar XAMPP con PHP 8.1 o posterior.
+2. Colocar la aplicación en `C:\xampp\htdocs\Web`.
+3. Iniciar Apache y MySQL desde XAMPP.
+4. Para una instalación nueva, abrir phpMyAdmin e importar `BD/base_completa.sql`.
+5. El archivo SQL crea la base de datos llamada `skin-hair device`.
+6. Revisar la conexión en `PHP/bootstrap.php`. La configuración local utiliza el usuario `root` y una contraseña vacía.
+7. Abrir `http://localhost/Web/index.html` en el navegador.
 
+Si la base actual ya está instalada y funciona, no es necesario volver a importar el archivo SQL. No debe importarse sobre tablas existentes.
 
-##  Equipo
+## Funcionamiento
 
-| Nombre   | Rol           |
-| -------- | ------------- |
-| Sofia Mojica | Desarrollo, diseño, base de datos|
-| Gabriel Zacarias | Diseño, desarrollo, base de datos, documentador|
+Los visitantes pueden recorrer todos los productos activos del catálogo.
 
+Después de registrarse e iniciar sesión, pueden completar el cuestionario y activar el filtro de recomendaciones. El sistema compara las respuestas del último cuestionario con las etiquetas de los productos.
 
-##  Objetivos del proyecto
+La cantidad de resultados depende de las respuestas y de los productos disponibles. También es posible quitar el filtro para volver a ver el catálogo completo.
 
-* Facilitar y promover el cuidado personal
-* Aprender mas sobre las tecnologias utilizadas
-* Aprender sobre cosmetologia y sobre el cuidado del pelo
+Los enlaces externos permiten consultar información y buscar productos; no garantizan disponibilidad ni un vendedor determinado.
 
-##  Próximas mejoras y futuras funcionalidades
+## Equipo
 
-* Empezar a trabajar sobre la base de datos
-* Empezar a formular las preguntas para el usuario
-* Empezar a buscar las paginas webs para los productos
-* Lograr mostrar las recomendaciones para el usuario
+| Nombre | Rol |
+| --- | --- |
+| Sofia Mojica | Desarrollo, diseño y base de datos |
+| Gabriel Zacarias | Diseño, desarrollo, base de datos y documentación |
 
-##  Licencia
+## Objetivos del proyecto
+
+* Facilitar y promover el cuidado personal.
+* Aprender sobre desarrollo web y bases de datos.
+* Aplicar consultas SQL para cargar y filtrar información.
+* Conocer más sobre cosmética y cuidado facial, corporal y capilar.
+
+## Próximas mejoras
+
+* Incorporar más productos y marcas.
+* Ampliar las preguntas del cuestionario.
+* Mejorar la precisión de las recomendaciones.
+* Revisar periódicamente los enlaces y la información de los productos.
+
+## Finalidad educativa
 
 Este proyecto fue desarrollado con fines **educativos**.
 
-##  Contacto
+## Contacto
 
-**Proyecto:** Skin-Hair-Device
+**Proyecto:** Skin-Hair-Device  
 **GitHub:** https://github.com/GabZac/Skin-Hair-Device
-
