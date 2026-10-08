@@ -1,0 +1,45 @@
+.catalogo { display: block; margin: 180px 30px 40px 280px; }
+.catalogo .cajaPrincipal { max-width: none; width: 100%; margin: 0 0 24px; }
+.catalogo a, .cuenta-form + a, .cajaPrincipal > a { margin: 8px 8px 8px 0; }
+.productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 24px; }
+.tarjeta-producto { background: #d9ef9f; border-radius: 40px; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.imagen-contenedor { background: white; border-radius: 20px; overflow: hidden; }
+.producto-img { display: block; width: 100%; height: 220px; object-fit: contain; }
+.contenido-detalle { display: flex; flex-direction: column; flex: 1; gap: 16px; }
+.producto-titulo { font-size: 20px; margin-bottom: 12px; }
+.producto-footer { margin-top: auto; color: #3b5110; font-weight: bold; }
+.cuenta-form { display: grid; gap: 18px; margin: 24px 0; }
+.cuenta-form label { display: grid; gap: 8px; }
+.cuenta-form input { padding: 12px; border: 1px solid #586e26; border-radius: 20px; font: inherit; }
+.sidebar { overflow-y: auto; }
+.menu-btn { right: 5px; border: 0; color: white; }
+.sidebar.collapsed .brand span, .sidebar.collapsed .menu { display: none; }
+.sidebar .brand { padding-right: 20px; }
+.sesion { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
+.sesion .btn { margin: 0; }
+.question-block legend { padding-bottom: 12px; }
+fieldset.question-block { border: 0; border-bottom: 1px dashed #586e26; padding: 0 0 15px; }
+.quiz-error { color: #850000; margin: 16px 0; }
+.quiz-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+.quiz-actions a { color: #3b5110; }
+body.menu-collapsed .catalogo { margin-left: 95px; }
+@media (max-width: 700px) {
+    h1 { font-size: 48px; }
+    .sidebar { top: 80px; height: calc(100vh - 80px); }
+    .catalogo { margin: 110px 15px 30px 85px; }
+    .catalogo .cajaPrincipal { padding: 20px; }
+    main:not(.catalogo) { margin-top: 100px; }
+}
+
+.volver-index { box-sizing: border-box; text-align: center; text-decoration: none; }
+
+.tienda-aviso { font-size: 13px; font-weight: normal; margin-top: 12px; }
+.producto-footer .btn { font-size: 14px; padding: 10px 16px; margin: 5px 0; }
+.tip-emergente { position: fixed; bottom: 24px; right: 24px; width: min(360px, calc(100vw - 32px)); box-sizing: border-box; padding: 24px; border: 1px solid #586e26; border-radius: 25px; background: #d9ef9f; color: #243407; box-shadow: 0 5px 25px #0003; z-index: 3000; font-family: 'Sand', sans-serif; }
+.tip-emergente[hidden] { display: none; }
+.tip-emergente h2 { font-size: 20px; margin-bottom: 12px; padding-right: 30px; }
+.tip-emergente p { line-height: 1.5; }
+.tip-emergente a { display: inline-block; color: #3b5110; margin: 12px 0; padding: 0; font-size: 14px; }
+.tip-cerrar { position: absolute; right: 14px; top: 12px; border: 0; background: transparent; font-size: 28px; color: #3b5110; cursor: pointer; }
+.tip-pausar, .tips-control { font: inherit; background: #586e26; color: white; border: 0; border-radius: 20px; padding: 8px 14px; cursor: pointer; }
+.tips-control { position: fixed; bottom: 12px; right: 16px; z-index: 2500; font-size: 12px; }

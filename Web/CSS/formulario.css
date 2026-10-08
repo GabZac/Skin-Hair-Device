@@ -57,7 +57,7 @@ span{
 .question-block {
     margin-bottom: 25px;
     padding-bottom: 15px;
-    border-bottom: 1px dashed #586e26; /* Línea divisoria usando tu verde oscuro */
+    border-bottom: 1px dashed #586e26; 
 }
 
 .question-text {
@@ -80,9 +80,9 @@ span{
     display: flex;
     align-items: center;
     padding: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semitransparente sobre tu caja verde */
+    background-color: rgba(255, 255, 255, 0.5); 
     border: 1px solid #586e26;
-    border-radius: 20px; /* Bordes redondeados para combinar con tu cajaPrincipal */
+    border-radius: 20px; 
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
@@ -94,14 +94,14 @@ span{
 .option-item input[type="radio"] {
     margin-right: 12px;
     transform: scale(1.2);
-    accent-color: #586e26; /* El círculo seleccionado se pinta de tu verde oscuro */
+    accent-color: #586e26; 
 }
 
 .btn-submit {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #586e26; /* Mismo color que tu header */
+    background-color: #586e26; 
     color: whitesmoke;
     border: none;
     border-radius: 25px;

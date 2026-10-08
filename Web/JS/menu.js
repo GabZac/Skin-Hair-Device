@@ -1,65 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const sidebar = document.getElementById("sidebar");
-    const toggleSidebar = document.getElementById("toggle-sidebar");
-    const toggleIcon = document.getElementById("toggle-icon");
-    const menuLinks = document.querySelectorAll(".menu-link");
-    const internoLinks = document.querySelectorAll(".menu-link-interno");
-
-    if (toggleSidebar) {
-        toggleSidebar.addEventListener("click", () => {
-            sidebar.classList.toggle("collapsed");
-            
-            if (sidebar.classList.contains("collapsed")) {
-                toggleIcon.className = "bx bx-chevron-right";
-            } else {
-                toggleIcon.className = "bx bx-chevron-left";
-            }
-        });
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar');
+    const toggle = document.getElementById('toggle-sidebar');
+    const icon = document.getElementById('toggle-icon');
+    if (!sidebar || !toggle) return;
+    function collapse(value) {
+        sidebar.classList.toggle('collapsed', value);
+        document.body.classList.toggle('menu-collapsed', value);
+        toggle.setAttribute('aria-expanded', String(!value));
+        toggle.setAttribute('aria-label', value ? 'Abrir menú' : 'Contraer menú');
+        icon.textContent = value ? '›' : '‹';
     }
-
-    menuLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            
-            if (sidebar.classList.contains("collapsed")) {
-                sidebar.classList.remove("collapsed");
-                toggleIcon.className = "bx bx-chevron-left";
-            }
-
-            const subMenu = link.nextElementSibling;
-            if (subMenu) {
-                subMenu.classList.toggle("show");
-                
-                const flecha = link.querySelector(".flecha-sub");
-                if (flecha) {
-                    if (subMenu.classList.contains("show")) {
-                        flecha.style.transform = "rotate(180deg)";
-                    } else {
-                        flecha.style.transform = "rotate(0deg)";
-                    }
-                }
-            }
+    collapse(window.matchMedia('(max-width: 700px)').matches);
+    toggle.addEventListener('click', () => collapse(!sidebar.classList.contains('collapsed')));
+    document.querySelectorAll('.menu-link, .menu-link-interno').forEach(link => {
+        const submenu = link.nextElementSibling;
+        const active = submenu.querySelector('[aria-current="page"]');
+        function expand(value) {
+            submenu.classList.toggle('show', value);
+            link.setAttribute('aria-expanded', String(value));
+            const arrow = link.querySelector('.flecha-sub');
+            if (arrow) arrow.style.transform = value ? 'rotate(180deg)' : '';
+        }
+        expand(Boolean(active));
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            collapse(false);
+            expand(!submenu.classList.contains('show'));
+        });
+        link.addEventListener('keydown', event => {
+            if (event.key === ' ') { event.preventDefault(); link.click(); }
         });
     });
-
-    internoLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation(); 
-            
-            const subMenuInterno = link.nextElementSibling;
-            if (subMenuInterno) {
-                subMenuInterno.classList.toggle("show");
-                
-                const flecha = link.querySelector(".flecha-sub");
-                if (flecha) {
-                    if (subMenuInterno.classList.contains("show")) {
-                        flecha.style.transform = "rotate(180deg)";
-                    } else {
-                        flecha.style.transform = "rotate(0deg)";
-                    }
-                }
-            }
-        });
-    });
+    const fallback = new URL('../IMG/favicon.png', document.querySelector('script[src$="JS/menu.js"]').src).href;
+    document.querySelectorAll('.producto-img').forEach(img => img.addEventListener('error', () => {
+        if (img.dataset.fallback) return;
+        img.dataset.fallback = '1';
+        img.src = fallback;
+    }));
 });
